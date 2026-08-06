@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CHEESEBURGER",
+    "name": "Cheeseburger",
+    "ingredients": ["BEEF_PATTY", "CHEDDAR_CHEESE", "SESAME_BUN", "LETTUCE", "TOMATO", "ONION", "KETCHUP"],
+    "instructions": ["Grill patty", "Toast bun", "Assemble"],
+    "markup": 2.5
+  },
+  {
+    "id": "VEGGIE_DELUXE",
+    "name": "Veggie Deluxe",
+    "ingredients": ["VEGGIE_PATTY", "AVOCADO", "SESAME_BUN", "LETTUCE", "TOMATO", "ONION", "MAYO"],
+    "instructions": ["Grill patty", "Toast bun", "Assemble"],
+    "markup": 2.2
+  },
+  {
+    "id": "BACONATOR",
+    "name": "Baconator",
+    "ingredients": ["BEEF_PATTY", "BEEF_PATTY", "BACON", "BACON", "CHEDDAR_CHEESE", "BRIOCHE_BUN", "KETCHUP"],
+    "instructions": ["Grill two patties", "Crisp bacon", "Toast bun", "Assemble"],
+    "markup": 2.3
+  },
+  {
+    "id": "CHICKEN_CLUB",
+    "name": "Chicken Club",
+    "ingredients": ["CHICKEN_PATTY", "BACON", "AMERICAN_CHEESE", "SESAME_BUN", "LETTUCE", "TOMATO", "MAYO"],
+    "instructions": ["Grill chicken", "Crisp bacon", "Toast bun", "Assemble"],
+    "markup": 2.0
+  }
+]

@@ -1,0 +1,7 @@
+5/8/2026:
+- I think this is when I actually started the project
+- Now have save/load functionality, and all the base json files set up (and axpandable)
+- Next'll be the actual game screen - or do I do the gameplay?
+- I feel like doing the game screen first tho, so I'll see if I can do that.
+- At least do the setup-before-service screen.
+- Did the menu selection design - will do ingredient purchasing tmrw.

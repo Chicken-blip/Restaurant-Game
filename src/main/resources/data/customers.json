@@ -1,0 +1,51 @@
+[
+  {
+    "type": "REGULAR",
+    "displayName": "Regular Customer",
+    "patienceBase": 15,
+    "patienceVariance": 10,
+    "budgetBase": 15,
+    "budgetVariance": 10,
+    "tipChance": 0.25,
+    "tipMultiplier": 0.10,
+    "weight": 50,
+    "preferredFood": ["CHEESEBURGER", "CHICKEN_CLUB"]
+  },
+  {
+    "type": "VEGETARIAN",
+    "displayName": "Vegetarian",
+    "patienceBase": 16,
+    "patienceVariance": 9,
+    "budgetBase": 14,
+    "budgetVariance": 8,
+    "tipChance": 0.30,
+    "tipMultiplier": 0.12,
+    "weight": 20,
+    "preferredFood": ["VEGGIE_DELUXE"]
+  },
+  {
+    "type": "FOODIE",
+    "displayName": "Foodie",
+    "patienceBase": 20,
+    "patienceVariance": 8,
+    "budgetBase": 25,
+    "budgetVariance": 15,
+    "tipChance": 0.50,
+    "tipMultiplier": 0.20,
+    "weight": 15,
+    "preferredFood": ["BACONATOR", "CHICKEN_CLUB"]
+  },
+  {
+    "type": "BUDGET",
+    "displayName": "Budgeting Customer",
+    "patienceBase": 14,
+    "patienceVariance": 12,
+    "budgetBase": 10,
+    "budgetVariance": 6,
+    "tipChance": 0.05,
+    "tipMultiplier": 0.05,
+    "weight": 30,
+    "preferredFood": ["CHEESEBURGER"]
+  }
+]
+

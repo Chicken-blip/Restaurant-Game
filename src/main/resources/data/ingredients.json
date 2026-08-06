@@ -1,0 +1,107 @@
+[
+  {
+    "id": "BEEF_PATTY",
+    "name": "Beef Patty",
+    "sellPrice": 3.00,
+    "cookTime": 4,
+    "purchasePrice": 2.00
+  },
+  {
+    "id": "CHICKEN_PATTY",
+    "name": "Chicken Patty",
+    "sellPrice": 3.50,
+    "cookTime": 5,
+    "purchasePrice": 2.50
+  },
+  {
+    "id": "VEGGIE_PATTY",
+    "name": "Veggie Patty",
+    "sellPrice": 4.00,
+    "cookTime": 3,
+    "purchasePrice": 3.00
+  },
+  {
+    "id": "BACON",
+    "name": "Bacon",
+    "sellPrice": 2.00,
+    "cookTime": 2,
+    "purchasePrice": 1.50
+  },
+  {
+    "id": "CHEDDAR_CHEESE",
+    "name": "Cheddar Cheese",
+    "sellPrice": 1.00,
+    "cookTime": 1,
+    "purchasePrice": 0.75
+  },
+  {
+    "id": "AMERICAN_CHEESE",
+    "name": "American Cheese",
+    "sellPrice": 0.80,
+    "cookTime": 1,
+    "purchasePrice": 0.60
+  },
+  {
+    "id": "SESAME_BUN",
+    "name": "Sesame Bun",
+    "sellPrice": 1.00,
+    "cookTime": 0,
+    "purchasePrice": 0.75
+  },
+  {
+    "id": "BRIOCHE_BUN",
+    "name": "Brioche Bun",
+    "sellPrice": 1.50,
+    "cookTime": 0,
+    "purchasePrice": 1.00
+  },
+  {
+    "id": "LETTUCE",
+    "name": "Lettuce",
+    "sellPrice": 0.50,
+    "cookTime": 0,
+    "purchasePrice": 0.25
+  },
+  {
+    "id": "TOMATO",
+    "name": "Tomato",
+    "sellPrice": 0.50,
+    "cookTime": 0,
+    "purchasePrice": 0.30
+  },
+  {
+    "id": "ONION",
+    "name": "Onion",
+    "sellPrice": 0.30,
+    "cookTime": 0,
+    "purchasePrice": 0.20
+  },
+  {
+    "id": "AVOCADO",
+    "name": "Avocado",
+    "sellPrice": 1.00,
+    "cookTime": 0,
+    "purchasePrice": 0.90
+  },
+  {
+    "id": "KETCHUP",
+    "name": "Ketchup",
+    "sellPrice": 0.25,
+    "cookTime": 0,
+    "purchasePrice": 0.10
+  },
+  {
+    "id": "MAYO",
+    "name": "Mayo",
+    "sellPrice": 0.25,
+    "cookTime": 0,
+    "purchasePrice": 0.10
+  },
+  {
+    "id": "MUSTARD",
+    "name": "Mustard",
+    "sellPrice": 0.25,
+    "cookTime": 0,
+    "purchasePrice": 0.10
+  }
+]

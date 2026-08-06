@@ -1,0 +1,20 @@
+[
+  {
+    "id": "STARTER_PACK",
+    "name": "Starter Pack",
+    "cost": 0,
+    "recipes": ["CHEESEBURGER", "VEGGIE_DELUXE"]
+  },
+  {
+    "id": "CHICKEN_PACK",
+    "name": "Chicken Pack",
+    "cost": 150,
+    "recipes": ["CHICKEN_CLUB"]
+  },
+  {
+    "id": "BACON_PACK",
+    "name": "Bacon Pack",
+    "cost": 200,
+    "recipes": ["BACONATOR"]
+  }
+]
