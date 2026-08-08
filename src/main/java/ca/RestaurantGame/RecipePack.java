@@ -4,11 +4,11 @@ import java.util.List;
 
 public class RecipePack {
     String id, name;
-    int cost;
+    double cost;
     List<String> recipes;
     UnlockCon unlockCondition;
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
     public void setCost(int cost) {

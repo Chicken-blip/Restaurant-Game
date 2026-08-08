@@ -5,3 +5,30 @@
 - I feel like doing the game screen first tho, so I'll see if I can do that.
 - At least do the setup-before-service screen.
 - Did the menu selection design - will do ingredient purchasing tmrw.
+
+6/8/2026:
+- Finished building the minimal screens for all pre-service decisions needed
+- Will probably start adding it in later today.
+- Nevermind - started working on Service screens - front of house and kitchen
+- Think that's done - will do the end-screen tomorrow for post-service
+
+7/8/2026:
+- Added some of the pre-service screens into here - formatting is absolute torture, but some of the buttons function
+- Once I'm done importing the others and their navigation, I'll start working on the actual functionality
+- Added all pre-service panels, and can navigate to each one!
+- Now to import data to each one...maybe recipe packs first.
+- Added a DataTranslator - converts IDs to Names, or IDs/Names to the actual object. Only works for recipes for now
+- Can now see contents of each Recipe Pack in the side text area!
+- Can now "purchase" recipe packs - though the actual checks aren't in place yet
+- Maybe menu management next...
+- Done with all MenuSetup functionality!!!
+- Temporarily done with RecipePackPurchasing - now to Ingredients!
+- Probably also retconning the idea of a minimum amount of dishes - except has to be at least 1. Still planning a max of ~6.
+- Can now see the cost per unit for an ingredient...now the purchasing!
+- Ingredient Purchasing complete!
+- Fixed some formatting - now what...?
+- Now the 'View Recipes' button - should list all purchased recipes
+- Added the View Recipes page...now to make it work!
+- Okay, all the pre-service stuff should now be complete
+- That was close - buying things didn't add to the stock at all!
+- NOW everything should be ready for service - but I'll check again tomorrow.

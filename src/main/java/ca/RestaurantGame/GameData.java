@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.*;
 
 public class GameData {
-    int money = 100, serviceNumber = 1;
+    double money = 100, serviceNumber = 1;
     List<String> unlocked_packs = new ArrayList<>();
-    Map<String, Integer> ingredientStock = new HashMap<>();
+    Map<String, Integer> ingredientStock = new HashMap<>(); //ID, quantity
 
     public void save(String filename) throws IOException {
         Properties props = new Properties();
@@ -24,7 +24,6 @@ public class GameData {
             props.store(out, null);
         }
     }
-
     public void load(String filename) throws IOException {
         Properties props = new Properties();
         try (FileInputStream in = new FileInputStream(filename)) {

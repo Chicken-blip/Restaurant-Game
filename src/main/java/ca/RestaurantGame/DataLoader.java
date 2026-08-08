@@ -14,7 +14,6 @@ public class DataLoader {
     static List<Recipe> recipes;
     static List<RecipePack> recipePacks;
     static List<CustomerType> customerTypes;
-
     public static void loadAll() {
         loadIngredients();
         loadRecipes();

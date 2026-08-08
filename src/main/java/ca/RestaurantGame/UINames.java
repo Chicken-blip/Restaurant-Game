@@ -1,0 +1,5 @@
+package ca.RestaurantGame;
+
+public enum UINames {
+    PRE_SERVICE_SCREEN, MENU_SETUP, INGREDIENT_PURCHASING, RECIPE_PACK_PURCHASING, RECIPE_VIEW
+}
