@@ -21,6 +21,15 @@ public class DataTranslator {
         return null;
     }
 
+    public static Ingredient ingredient_IDToIngredient(String ID) {
+        for (Ingredient i : DataLoader.ingredients) {
+            if (Objects.equals(i.id, ID)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
     public String recipe_NameToID(String name) {
         for (Recipe r : DataLoader.recipes) {
             if (Objects.equals(r.name, name)) {

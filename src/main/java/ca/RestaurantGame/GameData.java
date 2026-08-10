@@ -7,8 +7,13 @@ import java.util.*;
 
 public class GameData {
     double money = 100, serviceNumber = 1;
+    int customerNumber = 0;
     List<String> unlocked_packs = new ArrayList<>();
     Map<String, Integer> ingredientStock = new HashMap<>(); //ID, quantity
+    List<String> currentMenu = new ArrayList<>(); //Names of recipes, not IDs
+    List<Order> activeOrders = new ArrayList<>();
+    List<Meal> completeMeals = new ArrayList<>();
+    int customersLost = 0, customersCompleted = 0;
 
     public void save(String filename) throws IOException {
         Properties props = new Properties();

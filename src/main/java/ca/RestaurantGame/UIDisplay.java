@@ -6,8 +6,13 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class UIDisplay extends JFrame {
+    TimeClass timer = new TimeClass(this);
     GameData game;
     JPanel mainPanel;
     DefaultListModel<String> menuList = new DefaultListModel<>();
@@ -17,6 +22,8 @@ public class UIDisplay extends JFrame {
     DefaultListModel<String> recipesInPack = new DefaultListModel<>();
     DefaultListModel<String> recipes = new DefaultListModel<>();
     DefaultListModel<String> recipeIngredients = new DefaultListModel<>();
+    Map<String, Customer> customersByName = new HashMap<>();
+    DefaultListModel<String> customers = new DefaultListModel<>();
 
     public UIDisplay(GameData g) {
         game = g;
@@ -34,15 +41,338 @@ public class UIDisplay extends JFrame {
         JPanel IngredientPurchasing = getIngredientJPanel();
         JPanel RecipePackPurchasing = getRecipePackJPanel();
         JPanel RecipeView = getRecipeViewJPanel();
+        JPanel ServiceFront = getServiceFrontJPanel();
 
+        JPanel ServiceKitchen = new JPanel();
+        ServiceKitchen.setPreferredSize(new java.awt.Dimension(650, 400));
+
+        JLabel jLabel14, jLabel15, jLabel16;
+        JList<String> jList7, jList8;
+        JScrollPane jScrollPane8, jScrollPane9;
+        JButton jButton17, jButton18, jButton19, jButton20, jButton21, jButton22, jButton26;
+
+        jLabel14 = new JLabel("KITCHEN");
+        jLabel14.setFont(
+                new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jList7 = new JList<>();
+        jScrollPane8 = new JScrollPane();
+        jScrollPane8.setViewportView(jList7);
+
+        jLabel15 = new JLabel("ORDERS");
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jButton17 = new JButton("View Order");
+        jButton17.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+            }
+        });
+
+        jButton18 = new JButton("View Recipes");
+        jButton18.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+            }
+        });
+
+        jList8 = new JList<>();
+        jScrollPane9 = new JScrollPane();
+        jScrollPane9.setViewportView(jList8);
+
+        jLabel16 = new JLabel("EQUIPMENT");
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jButton20 = new JButton("Use Equipment");
+        jButton20.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+            }
+        });
+
+        jButton21 = new JButton("Assemble Meal");
+        jButton21.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+            }
+        });
+
+        jButton22 = new JButton("To Front");
+        jButton22.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showPanel(UINames.SERVICE_FRONT_OF_HOUSE);
+            }
+        });
+
+        jButton26 = new JButton("Ingredients");
+        jButton26.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+            }
+        });
+
+        javax.swing.GroupLayout ServiceKitchenLayout = new javax.swing.GroupLayout(ServiceKitchen);
+        ServiceKitchen.setLayout(ServiceKitchenLayout);
+        ServiceKitchenLayout.setHorizontalGroup(
+                ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ServiceKitchenLayout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jScrollPane8)
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(ServiceKitchenLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ServiceKitchenLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(25, 25, 25)))
+                                .addGap(60, 60, 60))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ServiceKitchenLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25))
+                        .addGroup(ServiceKitchenLayout.createSequentialGroup()
+                                .addGap(250, 250, 250)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ServiceKitchenLayout.setVerticalGroup(
+                ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ServiceKitchenLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(15, 15, 15)
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton17)
+                                        .addComponent(jButton20))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton21)
+                                .addGap(37, 37, 37)
+                                .addGroup(ServiceKitchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton18)
+                                        .addComponent(jButton26))
+                                .addGap(25, 25, 25))
+        );
+
+        mainPanel.add(ServiceKitchen, UINames.SERVICE_KITCHEN.name());
         mainPanel.add(RecipeView, UINames.RECIPE_VIEW.name());
         mainPanel.add(MenuSetup, UINames.MENU_SETUP.name());
+        mainPanel.add(ServiceFront, UINames.SERVICE_FRONT_OF_HOUSE.name());
         mainPanel.add(RecipePackPurchasing, UINames.RECIPE_PACK_PURCHASING.name());
         mainPanel.add(IngredientPurchasing, UINames.INGREDIENT_PURCHASING.name());
         mainPanel.add(PreServiceScreen, UINames.PRE_SERVICE_SCREEN.name());
 
     }
 
+    private JPanel getServiceFrontJPanel() {
+        JPanel ServiceFront = new JPanel();
+        ServiceFront.setPreferredSize(new Dimension(750, 450));
+
+        JList<String> jList6;
+        JTextArea jTextArea1;
+        JScrollPane jScrollPane6, jScrollPane7;
+        JLabel jLabel11, jLabel12, jLabel13;
+        JButton jButton13, jButton14, jButton15, jButton16;
+
+        //TODO: Fix
+        jList6 = new JList<>(customers);
+        jList6.setMaximumSize(new Dimension(45, 100));
+        jScrollPane6 = new JScrollPane();
+        jScrollPane6.setViewportView(jList6);
+
+        jLabel11 = new JLabel("CUSTOMERS");
+        jLabel11.setFont(new Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(SwingConstants.CENTER);
+
+        jLabel12 = new JLabel("FRONT OF HOUSE");
+        jLabel12.setFont(new Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(SwingConstants.CENTER);
+
+        jTextArea1 = new JTextArea(5, 20);
+        jTextArea1.setPreferredSize(new Dimension(200, 100));
+        jTextArea1.setEditable(false);
+        jScrollPane7 = new JScrollPane();
+        jScrollPane7.setViewportView(jTextArea1);
+
+        jButton13 = new JButton("Check Customer");
+        jButton13.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+                String custName = jList6.getSelectedValue();
+                Customer c = customersByName.get(custName);
+                if (c != null) {
+                    jTextArea1.setText("");
+                    jTextArea1.append("Order Taken: " + (c.orderTaken ? "YES" : "NO") + "\n");
+                    if (c.orderTaken) {
+                        jTextArea1.append("\nORDER DETAILS:\n");
+                        for (String n : c.order.mealsOrdered) {
+                            jTextArea1.append("- " + DataTranslator.recipe_IDToName(n) + "\n");
+                        }
+                    }
+                }
+            }
+        });
+
+        jLabel13 = new JLabel("CUSTOMER DETAILS");
+        jLabel13.setFont(new Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(SwingConstants.CENTER);
+
+        jButton14 = new JButton("Take Order");
+        jButton14.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: Complete
+                String custName = jList6.getSelectedValue();
+                Customer c = customersByName.get(custName);
+                if (c != null) {
+                    if (c.orderTaken) {
+                        JOptionPane.showMessageDialog(null, "You already took this customer's order!", "ORDER ALREADY TAKEN", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        c.orderTaken = true;
+                        jTextArea1.setText("");
+                        jTextArea1.append("Order Taken: " + (c.orderTaken ? "YES" : "NO") + "\n");
+                        if (c.orderTaken) {
+                            jTextArea1.append("\nORDER DETAILS:\n");
+                            for (String n : c.order.mealsOrdered) {
+                                jTextArea1.append("- " + DataTranslator.recipe_IDToName(n) + "\n");
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        jButton15 = new JButton("Serve");
+        jButton15.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<String> options = new ArrayList<>();
+                for (Meal m : game.completeMeals) {
+                    options.add(m.struct.name);
+                }
+                if (options.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "You don't have anything to serve!", "EMPTY INVENTORY", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    String selection = (String) JOptionPane.showInputDialog(null, "Select the meal that you will serve this Customer.", "SERVICE SELECTION", JOptionPane.QUESTION_MESSAGE, null, options.toArray(), options.getFirst());
+                    if (selection != null) {
+                        Meal m = null;
+                        //Check if the meal is in your "inventory"
+                        for (Meal x : game.completeMeals) {
+                            if (m == null && Objects.equals(x.struct.name, selection)) {
+                                m = x;
+                            }
+                        }
+                        //Check if the customer ordered the meal
+                        String custName = jList6.getSelectedValue();
+                        Customer c = customersByName.get(custName);
+                        if (c != null) {
+                            if (c.orderTaken && c.order.mealsOrdered.contains(m.struct.name)) {
+                                //Correct order - serve meal
+                                JOptionPane.showMessageDialog(null, custName + " served " + m.struct.name + "!", "CUSTOMER SERVED", JOptionPane.INFORMATION_MESSAGE);
+                                c.order.receiveMeal(m);
+                                game.completeMeals.remove(m);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        jButton16 = new JButton("To Kitchen");
+        jButton16.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jTextArea1.setText("");
+                showPanel(UINames.SERVICE_KITCHEN);
+            }
+        });
+
+        GroupLayout ServiceFrontLayout = new GroupLayout(ServiceFront);
+        ServiceFront.setLayout(ServiceFrontLayout);
+        ServiceFrontLayout.setHorizontalGroup(
+                ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(ServiceFrontLayout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(ServiceFrontLayout.createSequentialGroup()
+                                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jScrollPane6)
+                                                        .addComponent(jLabel11, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                                .addGap(100, 100, 100)
+                                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jScrollPane7, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                                        .addComponent(jLabel13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGroup(GroupLayout.Alignment.TRAILING, ServiceFrontLayout.createSequentialGroup()
+                                                                .addComponent(jButton14)
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jButton15)))
+                                                .addGap(0, 75, Short.MAX_VALUE))
+                                        .addGroup(ServiceFrontLayout.createSequentialGroup()
+                                                .addComponent(jButton13, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton16, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                .addGap(25, 25, 25))
+                        .addGroup(GroupLayout.Alignment.TRAILING, ServiceFrontLayout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 350, GroupLayout.PREFERRED_SIZE)
+                                .addGap(200, 200, 200))
+        );
+        ServiceFrontLayout.setVerticalGroup(
+                ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(ServiceFrontLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel12, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel11, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel13, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(ServiceFrontLayout.createSequentialGroup()
+                                                .addComponent(jScrollPane7, GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                                .addGap(25, 25, 25)
+                                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jButton14)
+                                                        .addComponent(jButton15)))
+                                        .addComponent(jScrollPane6))
+                                .addGap(27, 27, 27)
+                                .addGroup(ServiceFrontLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton13)
+                                        .addComponent(jButton16, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25))
+        );
+        return ServiceFront;
+    }
     private JPanel getRecipeViewJPanel() {
         JPanel RecipeView = new JPanel();
         RecipeView.setPreferredSize(new Dimension(750, 450));
@@ -625,7 +955,19 @@ public class UIDisplay extends JFrame {
         jButton11.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: Complete
+                //Export selected menu items if possible
+                if (menuList.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Your menu doesn't contain any items!", "EMPTY MENU", JOptionPane.ERROR_MESSAGE);
+                } else if (menuList.size() > 6) {
+                    JOptionPane.showMessageDialog(null, "Your menu can't have more than 6 items!", "LENGTHY MENU", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    for (int i = 0; i < menuList.size(); i++) {
+                        game.currentMenu.add(menuList.get(i));
+                    }
+                    showPanel(UINames.SERVICE_FRONT_OF_HOUSE);
+                    game.customerNumber = 0;
+                    timer.serviceTimer.start();
+                }
             }
         });
 
@@ -680,5 +1022,13 @@ public class UIDisplay extends JFrame {
         CardLayout cl = ((CardLayout) mainPanel.getLayout());
         cl.show(mainPanel, String.valueOf(name));
         pack();
+    }
+    public void addCustomer() {
+        Customer c = new Customer(game);
+        if (c.order != null && c.order.mealsOrdered.size() > 0) {
+            game.customerNumber++;
+            customersByName.put("Customer #" + game.customerNumber, c);
+            customers.addElement("Customer #" + game.customerNumber);
+        }
     }
 }

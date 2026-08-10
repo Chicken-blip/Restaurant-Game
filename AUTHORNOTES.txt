@@ -32,3 +32,22 @@
 - Okay, all the pre-service stuff should now be complete
 - That was close - buying things didn't add to the stock at all!
 - NOW everything should be ready for service - but I'll check again tomorrow.
+
+8/8/2026:
+- Okay - back at it...what do I need to do?
+- Basically done with the pre-service setup - now for the actual service logic
+- And before that, importing the screens
+- SERVICE LOOP:
+1. Create new Customer() every 5 "ticks" - if the menu doesn't contain any of their preferred meals, they leave - otherwise, they order
+2. If they order, add them to the "Customers" Model so Player can take their order
+- Can create a Customer object, and have it check if it can order off the current menu
+- Order object generally works, but it's a bit iffy - needs more testing, but that'll be later.
+- Added a new TimeClass object to progress each tick.
+- Now to try and work out the front of house screen...
+- Fixed Customer system - if they don't have anything they can order (or afford to order), they won't come in, but the timer resets regardless
+- Can also take their order now - will add the Serve functionality once I work out the Meal object
+- Should be able to complete an order, as well as receive payment - and customers should leave when they get their order complete or run out of patience
+- So far, Serve, TakeOrder, and CheckCustomer buttons all work - probably will add the Kitchen screen tomorrow
+
+9/8/2026:
+- Don't think I've really done much...kinda burned out - I'll work on it tomorrow

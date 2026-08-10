@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         GameData game = new GameData();
         DataLoader.loadAll();
+        //MAIN GAME SCRIPT
         UIDisplay display = new UIDisplay(game);
         //Start of the game - only add the Starter Pack
         display.recipePacks.addElement(DataLoader.recipePacks.get(0).name);
@@ -13,7 +14,6 @@ public class Main {
         for (Ingredient i : DataLoader.ingredients) {
             display.ingredients.addElement(i.name);
         }
-
 
         display.showPanel(UINames.RECIPE_PACK_PURCHASING);
         display.setVisible(true);
